@@ -12,7 +12,7 @@
 */
 
 /*
-© [2025] Microchip Technology Inc. and its subsidiaries.
+? [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -116,7 +116,7 @@ void PIN_MANAGER_IOC(void)
 void IO_RA5_ISR(void) {
 
     // Add custom IOCAF5 code
-
+     
     // Call the interrupt handler for the callback registered at runtime
     if(IO_RA5_InterruptHandler)
     {

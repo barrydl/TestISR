@@ -43,17 +43,18 @@ int ledState = 0;
 void RA5Callback(void)
 {
     ledState = !ledState;
+    __delay_ms(200);
 }
 
 int main(void)
 {
-    IO_RA5_SetInterruptHandler(RA5Callback);
-    
     SYSTEM_Initialize();
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts 
     // Use the following macros to: 
 
+    IO_RA5_SetInterruptHandler(RA5Callback);
+    
     // Enable the Global Interrupts 
     INTERRUPT_GlobalInterruptEnable(); 
 
@@ -61,7 +62,7 @@ int main(void)
     //INTERRUPT_GlobalInterruptDisable(); 
 
     // Enable the Peripheral Interrupts 
-    //INTERRUPT_PeripheralInterruptEnable(); 
+    INTERRUPT_PeripheralInterruptEnable(); 
 
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
